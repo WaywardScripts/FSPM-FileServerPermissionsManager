@@ -1,4 +1,4 @@
-# FileServerPermissionsManager
+# FSPM - File Server Permissions Manager
 Main plans:
 - Minimalist GUI to manage permissions on file servers/shares/directories/etc.
 - Powershell Module to use all available functions
