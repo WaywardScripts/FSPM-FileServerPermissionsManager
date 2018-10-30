@@ -38,7 +38,7 @@
             this.menuItem_LoadProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_SaveProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_SaveProfileAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.menu_File_Separator = new System.Windows.Forms.ToolStripSeparator();
             this.menuItem_RecentFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_Help = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_About = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,18 +68,20 @@
             this.textBox_RegexPattern = new System.Windows.Forms.TextBox();
             this.label_RegexFilter = new System.Windows.Forms.Label();
             this.label_RegexState = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_ServerName = new System.Windows.Forms.Label();
             this.textBox_Name = new System.Windows.Forms.TextBox();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage_Share = new System.Windows.Forms.TabPage();
-            this.tabPage_NTFS = new System.Windows.Forms.TabPage();
+            this.contextMenu_Permissions = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuItem_Edit = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBox_Permissions = new System.Windows.Forms.ListBox();
+            this.label_Permissions = new System.Windows.Forms.Label();
+            this.label_ServerValidity = new System.Windows.Forms.Label();
             this.contextMenu_Root.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.contextMenu_Server.SuspendLayout();
             this.contextMenu_Share.SuspendLayout();
             this.contextMenu_Directory.SuspendLayout();
             this.contextMenu_MultiDirectory.SuspendLayout();
-            this.tabControl.SuspendLayout();
+            this.contextMenu_Permissions.SuspendLayout();
             this.SuspendLayout();
             // 
             // treeView
@@ -89,7 +91,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView.Location = new System.Drawing.Point(12, 27);
             this.treeView.Name = "treeView";
-            this.treeView.Size = new System.Drawing.Size(316, 397);
+            this.treeView.Size = new System.Drawing.Size(156, 262);
             this.treeView.TabIndex = 0;
             this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView_AfterSelect);
             this.treeView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TreeView_KeyUp);
@@ -116,7 +118,7 @@
             this.menu_Help});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(659, 24);
+            this.menuStrip.Size = new System.Drawing.Size(499, 24);
             this.menuStrip.TabIndex = 1;
             // 
             // menu_File
@@ -126,7 +128,7 @@
             this.menuItem_LoadProfile,
             this.menuItem_SaveProfile,
             this.menuItem_SaveProfileAs,
-            this.toolStripSeparator1,
+            this.menu_File_Separator,
             this.menuItem_RecentFiles});
             this.menu_File.Name = "menu_File";
             this.menu_File.Size = new System.Drawing.Size(37, 20);
@@ -160,10 +162,10 @@
             this.menuItem_SaveProfileAs.Text = "Save Profile As...";
             this.menuItem_SaveProfileAs.Click += new System.EventHandler(this.MenuItem_SaveProfileAs_Click);
             // 
-            // toolStripSeparator1
+            // menu_File_Separator
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(225, 6);
+            this.menu_File_Separator.Name = "menu_File_Separator";
+            this.menu_File_Separator.Size = new System.Drawing.Size(225, 6);
             // 
             // menuItem_RecentFiles
             // 
@@ -191,7 +193,7 @@
             // 
             this.checkBox_RemovePermissions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_RemovePermissions.AutoSize = true;
-            this.checkBox_RemovePermissions.Location = new System.Drawing.Point(336, 405);
+            this.checkBox_RemovePermissions.Location = new System.Drawing.Point(176, 270);
             this.checkBox_RemovePermissions.Name = "checkBox_RemovePermissions";
             this.checkBox_RemovePermissions.Size = new System.Drawing.Size(190, 17);
             this.checkBox_RemovePermissions.TabIndex = 4;
@@ -201,7 +203,7 @@
             // button_ApplyPermissions
             // 
             this.button_ApplyPermissions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_ApplyPermissions.Location = new System.Drawing.Point(532, 401);
+            this.button_ApplyPermissions.Location = new System.Drawing.Point(372, 266);
             this.button_ApplyPermissions.Name = "button_ApplyPermissions";
             this.button_ApplyPermissions.Size = new System.Drawing.Size(120, 23);
             this.button_ApplyPermissions.TabIndex = 5;
@@ -371,7 +373,7 @@
             // textBox_RegexPattern
             // 
             this.textBox_RegexPattern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_RegexPattern.Location = new System.Drawing.Point(337, 63);
+            this.textBox_RegexPattern.Location = new System.Drawing.Point(177, 63);
             this.textBox_RegexPattern.Name = "textBox_RegexPattern";
             this.textBox_RegexPattern.Size = new System.Drawing.Size(274, 20);
             this.textBox_RegexPattern.TabIndex = 2;
@@ -381,7 +383,7 @@
             // 
             this.label_RegexFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_RegexFilter.AutoSize = true;
-            this.label_RegexFilter.Location = new System.Drawing.Point(334, 47);
+            this.label_RegexFilter.Location = new System.Drawing.Point(174, 47);
             this.label_RegexFilter.Name = "label_RegexFilter";
             this.label_RegexFilter.Size = new System.Drawing.Size(136, 13);
             this.label_RegexFilter.TabIndex = 9;
@@ -392,73 +394,86 @@
             this.label_RegexState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_RegexState.AutoSize = true;
             this.label_RegexState.ForeColor = System.Drawing.Color.Black;
-            this.label_RegexState.Location = new System.Drawing.Point(613, 66);
+            this.label_RegexState.Location = new System.Drawing.Point(453, 66);
             this.label_RegexState.Name = "label_RegexState";
             this.label_RegexState.Size = new System.Drawing.Size(30, 13);
             this.label_RegexState.TabIndex = 10;
             this.label_RegexState.Text = "Valid";
             // 
-            // label1
+            // label_ServerName
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(334, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Name:";
+            this.label_ServerName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_ServerName.AutoSize = true;
+            this.label_ServerName.Location = new System.Drawing.Point(174, 27);
+            this.label_ServerName.Name = "label_ServerName";
+            this.label_ServerName.Size = new System.Drawing.Size(38, 13);
+            this.label_ServerName.TabIndex = 11;
+            this.label_ServerName.Text = "Name:";
             // 
             // textBox_Name
             // 
             this.textBox_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_Name.Location = new System.Drawing.Point(378, 24);
+            this.textBox_Name.Location = new System.Drawing.Point(218, 24);
             this.textBox_Name.Name = "textBox_Name";
             this.textBox_Name.Size = new System.Drawing.Size(269, 20);
             this.textBox_Name.TabIndex = 1;
-            this.textBox_Name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Name_KeyDown);
+            this.textBox_Name.Enter += new System.EventHandler(this.TextBox_Name_Enter);
+            this.textBox_Name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_Name_KeyDown);
             this.textBox_Name.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_Name_KeyUp);
+            this.textBox_Name.Leave += new System.EventHandler(this.TextBox_Name_Leave);
             // 
-            // tabControl
+            // contextMenu_Permissions
             // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.contextMenu_Permissions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contextMenuItem_Edit});
+            this.contextMenu_Permissions.Name = "contextMenu_Permissions";
+            this.contextMenu_Permissions.Size = new System.Drawing.Size(104, 26);
+            // 
+            // contextMenuItem_Edit
+            // 
+            this.contextMenuItem_Edit.Name = "contextMenuItem_Edit";
+            this.contextMenuItem_Edit.Size = new System.Drawing.Size(103, 22);
+            this.contextMenuItem_Edit.Text = "Edit...";
+            // 
+            // listBox_Permissions
+            // 
+            this.listBox_Permissions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.tabPage_Share);
-            this.tabControl.Controls.Add(this.tabPage_NTFS);
-            this.tabControl.Location = new System.Drawing.Point(337, 89);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(310, 310);
-            this.tabControl.TabIndex = 3;
+            this.listBox_Permissions.FormattingEnabled = true;
+            this.listBox_Permissions.Location = new System.Drawing.Point(177, 102);
+            this.listBox_Permissions.Name = "listBox_Permissions";
+            this.listBox_Permissions.Size = new System.Drawing.Size(310, 147);
+            this.listBox_Permissions.TabIndex = 13;
             // 
-            // tabPage_Share
+            // label_Permissions
             // 
-            this.tabPage_Share.Location = new System.Drawing.Point(4, 22);
-            this.tabPage_Share.Name = "tabPage_Share";
-            this.tabPage_Share.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Share.Size = new System.Drawing.Size(302, 284);
-            this.tabPage_Share.TabIndex = 0;
-            this.tabPage_Share.Text = "Share Permissions";
-            this.tabPage_Share.UseVisualStyleBackColor = true;
+            this.label_Permissions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Permissions.AutoSize = true;
+            this.label_Permissions.Location = new System.Drawing.Point(174, 86);
+            this.label_Permissions.Name = "label_Permissions";
+            this.label_Permissions.Size = new System.Drawing.Size(62, 13);
+            this.label_Permissions.TabIndex = 14;
+            this.label_Permissions.Text = "Permissions";
             // 
-            // tabPage_NTFS
+            // label_ServerValidity
             // 
-            this.tabPage_NTFS.Location = new System.Drawing.Point(4, 22);
-            this.tabPage_NTFS.Name = "tabPage_NTFS";
-            this.tabPage_NTFS.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_NTFS.Size = new System.Drawing.Size(302, 284);
-            this.tabPage_NTFS.TabIndex = 1;
-            this.tabPage_NTFS.Text = "NTFS Permissions";
-            this.tabPage_NTFS.UseVisualStyleBackColor = true;
+            this.label_ServerValidity.AutoSize = true;
+            this.label_ServerValidity.Location = new System.Drawing.Point(375, 8);
+            this.label_ServerValidity.Name = "label_ServerValidity";
+            this.label_ServerValidity.Size = new System.Drawing.Size(0, 13);
+            this.label_ServerValidity.TabIndex = 15;
             // 
             // window_Main
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 436);
-            this.Controls.Add(this.tabControl);
+            this.ClientSize = new System.Drawing.Size(499, 301);
+            this.Controls.Add(this.label_ServerValidity);
+            this.Controls.Add(this.label_Permissions);
+            this.Controls.Add(this.listBox_Permissions);
             this.Controls.Add(this.textBox_Name);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_ServerName);
             this.Controls.Add(this.label_RegexState);
             this.Controls.Add(this.label_RegexFilter);
             this.Controls.Add(this.textBox_RegexPattern);
@@ -477,7 +492,7 @@
             this.contextMenu_Share.ResumeLayout(false);
             this.contextMenu_Directory.ResumeLayout(false);
             this.contextMenu_MultiDirectory.ResumeLayout(false);
-            this.tabControl.ResumeLayout(false);
+            this.contextMenu_Permissions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,7 +507,7 @@
         private System.Windows.Forms.CheckBox checkBox_RemovePermissions;
         private System.Windows.Forms.Button button_ApplyPermissions;
         private System.Windows.Forms.ToolStripMenuItem menuItem_RecentFiles;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator menu_File_Separator;
         private System.Windows.Forms.ContextMenuStrip contextMenu_Root;
         private System.Windows.Forms.ContextMenuStrip contextMenu_Server;
         private System.Windows.Forms.ContextMenuStrip contextMenu_Share;
@@ -520,15 +535,17 @@
         private System.Windows.Forms.ToolStripMenuItem contextMenuItem_Rename2;
         private System.Windows.Forms.ToolStripMenuItem contextMenuItem_Rename3;
         private System.Windows.Forms.ToolStripMenuItem contextMenuItem_Rename4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_ServerName;
         private System.Windows.Forms.TextBox textBox_Name;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPage_Share;
-        private System.Windows.Forms.TabPage tabPage_NTFS;
         private System.Windows.Forms.ToolStripMenuItem contextMenuItem_DeleteServer;
         private System.Windows.Forms.ToolStripMenuItem contextMenuItem_DeleteShare;
         private System.Windows.Forms.ToolStripMenuItem contextMenuItem_DeleteMultiDirectory;
         private System.Windows.Forms.ToolStripMenuItem contextMenuItem_DeleteDirectory;
+        private System.Windows.Forms.ContextMenuStrip contextMenu_Permissions;
+        private System.Windows.Forms.ToolStripMenuItem contextMenuItem_Edit;
+        private System.Windows.Forms.ListBox listBox_Permissions;
+        private System.Windows.Forms.Label label_Permissions;
+        private System.Windows.Forms.Label label_ServerValidity;
     }
 }
 
